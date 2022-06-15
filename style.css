@@ -1,0 +1,159 @@
+body {
+	background: rgb(227, 235, 240);
+	font-size: 16px;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+ul,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+li,
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+/* Full Page Layout */
+
+.page {
+	display: grid;
+	grid-template-areas: "sidebar main";
+	grid-template-columns: 1fr 4fr;
+}
+
+.sidebar {
+	grid-area: sidebar;
+	background: rgb(77, 129, 206);
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 16px;
+	height: 100vh;
+  box-sizing: border-box;
+}
+
+.main {
+	grid-area: main;
+	display: grid;
+	grid-template-areas:
+		"topbar"
+		"content";
+	grid-template-rows: auto 1fr;
+}
+
+/* Main section Layout */
+
+.topbar {
+	/* child */
+	grid-area: topbar;
+	/* parent */
+	display: grid;
+	grid-template-areas:
+		"search user"
+		"welcome options";
+	padding: 16px;
+	gap: 16px;
+	background: white;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search {
+	grid-area: search;
+}
+
+.user {
+	/* child */
+	grid-area: user;
+	/* parent */
+	text-align: right;
+}
+
+.user img {
+	max-width: 30px;
+}
+
+.user ul {
+	display: inline;
+}
+
+.welcome {
+	/* child */
+	grid-area: welcome;
+	/* parent */
+	display: grid;
+	grid-template-areas: "pfp text";
+	grid-template-columns: auto 1fr;
+	gap: 16px;
+	align-items: center;
+}
+
+.welcome .welcome-pfp {
+	grid-area: pfp;
+}
+
+.welcome .welcome-text {
+	grid-area: text;
+}
+
+.welcome img {
+	max-width: 60px;
+}
+
+.options {
+	grid-area: options;
+	text-align: right;
+}
+
+.content {
+	display: grid;
+	grid-area: content;
+	grid-template-areas:
+		"projects announcements"
+		"projects trending";
+	grid-template-columns: 3fr 1fr;
+	gap: 16px;
+	padding: 16px;
+}
+
+/* Content Layout */
+
+.projects {
+	grid-area: projects;
+}
+
+.announcements {
+	grid-area: announcements;
+}
+
+.trending {
+	grid-area: trending;
+}
+
+.btns {
+	background: rgb(77, 129, 206);
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	border: 0px;
+	padding: 1em;
+	border-radius: 5em;
+}
+
+#searchbar {
+	border-radius: 5em;
+	border: none;
+	background: rgb(227, 235, 240);
+	padding: 8px;
+	font-size: 16px;
+	min-width: 400px;
+}
