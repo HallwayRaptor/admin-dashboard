@@ -1,5 +1,11 @@
+:root {
+	--blue: #69b4e6;
+	--white: #fff;
+	--grey: #dedede;
+}
+
 body {
-	background: rgb(227, 235, 240);
+	background: var(--white);
 	font-size: 16px;
 	font-family: sans-serif;
 	box-sizing: border-box;
@@ -33,8 +39,8 @@ ul {
 
 .sidebar {
 	grid-area: sidebar;
-	background: rgb(77, 129, 206);
-	color: white;
+	background: var(--blue);
+	color: var(--white);
 	font-size: 18px;
 	font-weight: bold;
 	padding: 16px;
@@ -43,6 +49,7 @@ ul {
 }
 
 .main {
+	background: var(--grey);
 	grid-area: main;
 	display: grid;
 	grid-template-areas:
@@ -54,6 +61,7 @@ ul {
 /* Main section Layout */
 
 .topbar {
+	background: var(--white);
 	/* child */
 	grid-area: topbar;
 	/* parent */
@@ -63,7 +71,6 @@ ul {
 		"welcome options";
 	padding: 16px;
 	gap: 16px;
-	background: white;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,17 +125,39 @@ ul {
 	display: grid;
 	grid-area: content;
 	grid-template-areas:
+		"t-projects t-announcements "
 		"projects announcements"
 		"projects trending";
 	grid-template-columns: 3fr 1fr;
+	grid-template-rows: auto 1fr;
 	gap: 16px;
 	padding: 16px;
 }
 
 /* Content Layout */
+#t-projects {
+	grid-area: t-projects;
+}
+
+#-announcements {
+	grid-area: t-announcements;
+}
+
 
 .projects {
+	/* child */
 	grid-area: projects;
+	/* parent */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+}
+
+.project {
+	background: var(--white);
+	border-radius: 8px;
+	border-left: var(--blue);
+	padding: 16px;
 }
 
 .announcements {
@@ -140,7 +169,7 @@ ul {
 }
 
 .btns {
-	background: rgb(77, 129, 206);
+	background: var(--blue);
 	font-size: 16px;
 	font-weight: bold;
 	color: #fff;
@@ -152,7 +181,7 @@ ul {
 #searchbar {
 	border-radius: 5em;
 	border: none;
-	background: rgb(227, 235, 240);
+	background: var(--grey);
 	padding: 8px;
 	font-size: 16px;
 	min-width: 400px;
